@@ -27,9 +27,10 @@
       text-decoration: none;
       color: $blue;
     }
-    &-icon {
+    &-link:hover {
       text-decoration: none;
-      color: $blue;
+      color: $lightBlue;
+      transition: color 0.25s ease-in-out;
     }
   }
 }
@@ -37,10 +38,13 @@
 .lang-btn {
   display: none;
   border: none;
-  background-color: $offWhite;
+  background-color: $white;
   color: $gray;
   font-size: 1.8rem;
   font-size: bold;
+}
+.lang-content{
+  display: none;
 }
 
 .header__logo {
@@ -57,6 +61,21 @@
   .lang-btn {
     display: block;
   }
+  .lang-content {
+    display: block;
+    width: 100rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: end;
+    &__btn{
+      font-size: 1.8rem;
+      font-size: bold;
+      border: 1px solid #eef1f1;
+      padding: 1rem 2rem;
+      background-color: $white;
+      color: $gray;
+    }
+  }
 }
 
 // 768
@@ -66,5 +85,14 @@
     &-concept {
       display: block;
     }
+  }
+}
+
+// 1200
+@media only screen and (min-width: 75em) {
+  .header {
+    width: 100rem;
+    margin: 0 auto;
+    justify-content: space-between;
   }
 }

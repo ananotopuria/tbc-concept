@@ -169,17 +169,75 @@
   &-link {
     text-decoration: none;
     color: $gray;
+    font-size: 1.6rem;
+    display: block;
+    position: relative;
+    padding: 1.9em 0;
+    &s {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #141719;
+      list-style: none;
+      text-decoration: none;
+    }
+  }
+  &-ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 3rem;
   }
 }
 
 .main__navigation-content {
-  margin-top: 10px;
-  padding: 10px;
-  border: 1px solid #000;
-  color: #000;
+  margin: 0 auto;
+  width: 100rem;
   padding: 2rem;
 }
 
+.offers {
+  margin-left: 12rem;
+}
+.concept-space {
+  margin-left: 26rem;
+}
+.digital-link {
+  font-size: 1.4rem;
+  color: blue;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hover:hover {
+  color: $blue;
+}
+
+.main__navigation-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: $blue;
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.main__navigation-link:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+}
+
+.main__navigation-link::after {
+  opacity: 1;
+  transform: scale(0);
+  transform-origin: center;
+}
+
+.main__navigation-link:focus::after {
+  transform: scale(1);
+}
 // 991px
 
 @media only screen and (min-width: 61.9375em) {
@@ -190,3 +248,5 @@
     display: block;
   }
 }
+
+

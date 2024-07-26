@@ -23,8 +23,31 @@ export function setupNavigation() {
   });
 
   document.addEventListener("click", function (event) {
-    if (currentVisibleContent && !event.target.closest(".main__navigation")) {
+    if (
+      currentVisibleContent &&
+      !event.target.closest(".main__navigation") &&
+      !event.target.closest(".lang-btn") &&
+      !event.target.closest("#eng-content")
+    ) {
       currentVisibleContent.classList.add("hidden");
+      currentVisibleContent = null;
+    }
+  });
+
+  const langBtn = document.querySelector(".lang-btn");
+  langBtn.addEventListener("click", function (event) {
+    event.stopPropagation();
+    const engContent = document.getElementById("eng-content");
+
+    if (currentVisibleContent && currentVisibleContent !== engContent) {
+      currentVisibleContent.classList.add("hidden");
+    }
+
+    if (engContent.classList.contains("hidden")) {
+      engContent.classList.remove("hidden");
+      currentVisibleContent = engContent;
+    } else {
+      engContent.classList.add("hidden");
       currentVisibleContent = null;
     }
   });
