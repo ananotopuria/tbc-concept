@@ -13,7 +13,11 @@ html {
 body {
   box-sizing: border-box;
   overflow-x: hidden;
-  color: #f9fafa;
+  background-color: #f9fafa;
+}
+
+.navigation__list {
+  margin-top: 20rem;
 }
 
 .nav-acc {
@@ -22,7 +26,6 @@ body {
 
 .accordion {
   width: 100%;
-  padding: 2rem;
   margin: 0 auto;
   position: relative;
   margin-top: 3rem;
@@ -41,29 +44,43 @@ body {
   display: none;
 }
 .accordion .accordion-title-border {
-  border-bottom: 1px solid #3f3f3f;
+  border-bottom: 1px solid #bebebe;
   padding-bottom: 1rem;
 }
 .accordion .accordion-t {
   font-size: 2rem;
   color: #555f62;
+  padding: 0 2rem;
+  color: #141719;
+  font-weight: 500;
 }
 .accordion .accordion-p {
-  padding: 0;
+  padding: 0 2rem;
   font-size: 1.8rem;
   color: #555f62;
-  border-bottom: 1px solid #3f3f3f;
+  border-bottom: 1px solid #bebebe;
   overflow: hidden;
   max-height: 0;
   opacity: 0;
   transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+.accordion .accordion__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.accordion .accordion__nav-link {
+  text-decoration: none;
+  list-style-type: none;
+  color: #555f62;
 }
 .accordion .accordion-btns {
   border: none;
   background-color: transparent;
   position: absolute;
   top: 1rem;
-  right: 0;
+  right: 2rem;
   cursor: pointer;
 }
 .accordion .accordion-arrow {
@@ -74,9 +91,90 @@ body {
   display: none;
 }
 
+.nav__footer {
+  margin-top: 2rem;
+  padding: 2rem;
+}
+.nav__footer-title {
+  color: #141719;
+  font-size: 1.8rem;
+  margin-top: 2rem;
+}
+.nav__footer-li {
+  color: #555f62;
+  list-style: none;
+  padding-top: 1rem;
+  font-size: 1.4rem;
+}
+.nav__footer-li:hover {
+  cursor: pointer;
+}
+.nav__footer-icons {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  font-size: 1.8rem;
+}
+.nav__footer-icon {
+  color: #555f62;
+}
+.nav__footer-icon:hover {
+  color: #2435cc;
+}
+.nav__footer-link {
+  padding: 1rem;
+  background-color: #f9fafa;
+  border-radius: 1rem;
+}
+.nav__footer-link:hover {
+  background-color: #f9fafa;
+  color: #2435cc;
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  color: #555f62;
+  background-color: #f9fafa;
+}
+
+.rights {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.2rem;
+}
+.rights-link {
+  text-decoration: none;
+  color: #555f62;
+}
+
+.copyright {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+.copyright-txt {
+  align-self: center;
+}
+
+.copyright > svg {
+  width: 2rem;
+}
+
+@media only screen and (min-width: 48em) {
+  .footer__container {
+    background-color: #f9fafa;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
 .wrapper {
   width: 100%;
   position: fixed;
+  background-color: #fff;
 }
 
 .header {
@@ -193,7 +291,7 @@ body {
 .navigation__nav {
   height: 100vh;
   position: fixed;
-  top: 0;
+  top: 3rem;
   left: 0;
   z-index: 1500;
   opacity: 0;
@@ -331,17 +429,19 @@ body {
   display: block;
   position: relative;
   padding: 1.9em 0;
+  list-style-type: none;
 }
 .main__navigation-links {
   font-size: 1.4rem;
   font-weight: 500;
   color: #141719;
-  list-style: none;
+  list-style-type: none;
   text-decoration: none;
 }
 .main__navigation-ul {
   display: flex;
   flex-direction: column;
+  list-style-type: none;
   gap: 2rem;
   width: 3rem;
 }
@@ -404,6 +504,76 @@ body {
   }
   .main__navigation {
     display: block;
+  }
+}
+.main-wrapper {
+  width: 100%;
+  padding-left: 2rem;
+}
+
+.main {
+  color: #141719;
+  font-size: 1.2rem;
+  padding-top: 10rem;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  margin-top: 5rem;
+  overflow: hidden;
+  background: url("https://www.retail-focus.co.uk/wp-content/uploads/2021/03/%E1%83%91%E1%83%98%E1%83%91%E1%83%9A%E1%83%98%E1%83%9D%E1%83%97%E1%83%94%E1%83%99%E1%83%90-Guram-Kapanadze-3-1024x683.jpg") no-repeat center bottom;
+}
+.hero__content {
+  margin-top: 20rem;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+@media only screen and (min-width: 30em) {
+  .main-wrapper {
+    padding-left: 4rem;
+  }
+  .main-icon {
+    display: none;
+  }
+}
+@media only screen and (min-width: 37.5em) {
+  .main-wrapper {
+    padding-left: 8rem;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .main-wrapper {
+    padding-left: 9rem;
+  }
+}
+@media only screen and (min-width: 61.9375em) {
+  .main-wrapper {
+    padding-left: 4rem;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .main-wrapper {
+    width: 100rem;
+    margin: 0 auto;
+    padding: 0;
   }
 }
 

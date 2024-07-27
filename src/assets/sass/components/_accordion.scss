@@ -1,10 +1,18 @@
+.navigation__list {
+  margin-top: 20rem;
+}
+
+// .nav-acc {
+//   background-color: red;
+// }
+
 .nav-acc {
   color: $gray;
 }
 
 .accordion {
   width: 100%;
-  padding: 2rem;
+  // padding: 2rem;
   margin: 0 auto;
   position: relative;
   margin-top: 3rem;
@@ -31,24 +39,38 @@
   }
 
   .accordion-title-border {
-    border-bottom: 1px solid #3f3f3f;
+    border-bottom: 1px solid $lightGray;
     padding-bottom: 1rem;
   }
 
   .accordion-t {
     font-size: 2rem;
     color: $gray;
+    padding: 0 2rem;
+    color: $black;
+    font-weight: 500;
   }
 
   .accordion-p {
-    padding: 0;
+    padding: 0 2rem;
     font-size: 1.8rem;
     color: $gray;
-    border-bottom: 1px solid #3f3f3f;
+    border-bottom: 1px solid $lightGray;
     overflow: hidden;
     max-height: 0;
     opacity: 0;
     transition: max-height 0.3s ease, opacity 0.3s ease;
+  }
+  .accordion__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+    &-link {
+      text-decoration: none;
+      list-style-type: none;
+      color: $gray;
+    }
   }
 
   .accordion-btns {
@@ -56,7 +78,7 @@
     background-color: transparent;
     position: absolute;
     top: 1rem;
-    right: 0;
+    right: 2rem;
     cursor: pointer;
   }
 
@@ -67,5 +89,85 @@
 
   .arrow-up {
     display: none;
+  }
+}
+
+.nav__footer {
+  margin-top: 2rem;
+  padding: 2rem;
+  &-title {
+    color: $black;
+    font-size: 1.8rem;
+    margin-top: 2rem;
+  }
+  &-li {
+    color: $gray;
+    list-style: none;
+    padding-top: 1rem;
+    font-size: 1.4rem;
+  }
+  &-li:hover {
+    cursor: pointer;
+  }
+  &-icons {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    font-size: 1.8rem;
+  }
+  &-icon {
+    color: $gray;
+  }
+  &-icon:hover {
+    color: $blue;
+  }
+  &-link {
+    padding: 1rem;
+    background-color: $offWhite;
+    border-radius: 1rem;
+  }
+  &-link:hover {
+    background-color: $offWhite;
+    color: $blue;
+  }
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  color: $gray;
+  background-color: $offWhite;
+}
+
+.rights {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.2rem;
+  &-link {
+    text-decoration: none;
+    color: $gray;
+  }
+}
+.copyright{
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+  &-txt{
+    align-self: center;
+  }
+}
+.copyright > svg {
+  width: 2rem;
+}
+
+// 768
+@media only screen and (min-width: 48em) {
+  .footer__container {
+    background-color: $offWhite;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
